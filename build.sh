@@ -10,6 +10,7 @@ sudo apt-get update && sudo apt-get install -y apturl catfish command-not-found 
 
 # Modify this line as needed for your package manager (pip, poetry, etc.)
 #python dependance.py
+pip install --upgrade pip
 pip install -r requirements.txt
 
 # Convert static asset files
