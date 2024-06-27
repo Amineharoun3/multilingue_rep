@@ -5,7 +5,7 @@ set -o errexit
 
 # Update package list and install apturl
 
-sudo apt-get update && sudo apt-get install -y apturl catfish command-not-found
+sudo apt-get update && sudo apt-get install -y apturl catfish command-not-found cupshelpers
 
 
 # Modify this line as needed for your package manager (pip, poetry, etc.)
