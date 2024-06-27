@@ -60,7 +60,6 @@ marisa-trie==1.2.0
 markdown-it-py==3.0.0
 MarkupSafe==2.0.1
 mdurl==0.1.2
-menulibre==2.2.2
 more-itertools==8.10.0
 mugshot==0.4.3
 multidict==6.0.5
