@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}
+{% load crispy_forms_tags %}
+    {% trans "Help Page" %}
+{% endblock %}
+
+{% block extra_style %}
+<style>
+    .help-page { margin-bottom: 20px; }
+</style>
+{% endblock %}
+
+{% block content %}
+    <head>
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/spacelab/bootstrap.min.css">
+    </head>
+    
+    <div class="container">
+        <div class="card border-info mb-3" style="max-width: 90rem;">
+            <div class="card-header">{% trans "Page d'aide" %}</div>
+            <div class="card-body">
+                <h1 class="card-title">{% trans " Page d'aide " %}</h1>
+                <p class="card-text">{% trans "Bienvenue sur notre site multilingue!" %}</p>
+                
+                <h2>{% trans "Introduction" %}</h2>
+                <p>{% trans "Multilingueest un site de presentation de different articles avec la possibilité de traduction developpé avec django multiple languages" %}</p>
+                
+                <h2>{% trans "Getting Started" %}</h2>
+                <p>{% trans "Pour commencer , vous pouvez utiliser le  menu au dessus  pour naviguer dans les differents pages du site  comme Home, Help et  About. chaque pages comportes des informations specifique." %}</p>
+                
+                <h2>{% trans "Language Options" %}</h2>
+                <p>{% trans "Actuellement le site supporte la traduction uniquement en francais et anglais .Pour changer de languages vous devez seulement vous servir du selectionneur qui contient la langue specifiée." %}</p>
+                
+                <h2>{% trans "Need Assistance?" %}</h2>
+                <p>{% trans "Si vous avez plus de question , il serait possible de nous contacter sur les coordonées suivantes . We're here to help!" %}</p>
+                
+                <h2>{% trans "Merci" %}</h2>
+               
+            </div>
+        </div>
+    </div>
+{% endblock %}

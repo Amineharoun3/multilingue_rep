@@ -1,0 +1,121 @@
+<!-- article_list.html -->
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}
+{% load crispy_forms_tags %}
+    {% trans "Multilingue_Site" %}
+{% endblock %}
+
+{% block extra_style %}
+<style>
+    .article { margin-bottom: 20px; }
+</style>
+{% endblock %}
+
+{% block content %}
+
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/spacelab/bootstrap.min.css">
+    </head>
+    
+    <h1 class="text-center">{% trans "List d'articles" %}</h1>
+  
+    <form action="{% url 'set_language' %}" method="post" id="language-form">
+        {% csrf_token %}
+        <input name="next" type="hidden" value="{{ request.path }}">
+        <input type="hidden" name="language" id="language-input" value="{{ LANGUAGE_CODE }}">
+        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+            
+            <button type="button" class="btn btn-outline-info" onclick="setLanguage('en')">English</button>
+            <button type="button" class="btn btn-outline-info" onclick="setLanguage('fr')">Français</button>
+            <div class="btn-group" role="group">
+                
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop3">
+                    {% get_available_languages as LANGUAGES %}
+                    {% for lang in LANGUAGES %}
+                    <a class="dropdown-item" href="#" onclick="setLanguage('{{ lang.0 }}')">{{ lang.1 }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </form>
+    
+<br>
+    <script>
+        function setLanguage(lang) {
+            document.getElementById('language-input').value = lang;
+            document.getElementById('language-form').submit();
+        }
+    </script>
+    
+    
+
+    <div class="articles">
+        {% for article in articles %}
+        
+         
+        <div class="article">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">              
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+
+            <h2>{{ article.title }}</h2>
+                </button>
+                </h2>
+           
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body text-center">
+                    <strong>{{ article.content }}</strong>
+                    <br>
+                    <img src="{% static 'images/' %}{{ forloop.counter }}.jpeg"  alt="{{ article.title }}" class="img-fluid">
+                </div>
+                <small>{% trans "Published on" %}: {{ article.publication_date|date:"Y-m-d" }}</small>
+                </div>
+                </div>
+               </div>
+               
+               </div>
+               </div>
+                
+           
+            
+        </div>
+        {% empty %}
+        <p>{% trans "No articles are available." %}</p>
+
+        
+
+        {% endfor %}
+ 
+          <div>
+            <ul class="pagination pagination-sm">
+              <li class="page-item disabled">
+                <a class="page-link" href="#">&laquo;</a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">2</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">3</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">4</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">5</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">&raquo;</a>
+              </li>
+            </ul>
+          </div>
+    </div>
+    
+    <script src="{% static 'script.js' %}" type/javascript"></script>
+{% endblock %}

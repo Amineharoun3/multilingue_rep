@@ -1,0 +1,64 @@
+<!-- base.html -->
+{% load i18n %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% trans "My Site" %}{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+    </style>
+    {% block extra_style %}{% endblock %}
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/spacelab/bootstrap.min.css">
+</head>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Menu</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor04" aria-controls="navbarColor04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor04">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'article_list' %}">Home
+              <span class="visually-hidden">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'help' %}">Help</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link " data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"></a>
+            <div class="menu">
+              <a class="dropdown-item" href="#"></a>
+              <a class="dropdown-item" href="#"></a>
+              <a class="dropdown-item" href="#"></a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#"></a>
+            </div>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-sm-2" type="search" placeholder="Search">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+<body>
+    
+	 
+    {% block content %}
+    <!-- Le contenu spécifique à chaque page ira ici -->
+       <script src="{% static 'script.js' %}" type/javascript"></script>
+    {% endblock %}
+    
+</body>
+</html>
