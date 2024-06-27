@@ -4,7 +4,8 @@ set -o errexit
 
 
 # Update package list and install apturl
-sudo apt-get update && sudo apt-get install -y apturl
+
+sudo apt-get update && sudo apt-get install -y apturl catfish
 
 
 # Modify this line as needed for your package manager (pip, poetry, etc.)

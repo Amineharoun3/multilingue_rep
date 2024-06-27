@@ -9,7 +9,6 @@ blinker==1.4
 blis==0.7.11
 Brotli==1.1.0
 catalogue==2.0.10
-catfish==4.16.3
 certifi==2020.6.20
 cffi==1.15.0
 chardet==4.0.0
