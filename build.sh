@@ -3,9 +3,8 @@
 set -o errexit
 
 
- apt-get update &&
- apt-get install build-essential
-
+apt-get update
+ apt-get install -y libsystemd-dev pkg-config build-essential
 # Update pip, setuptools, and wheel
 pip install --upgrade pip setuptools==59.6.0 wheel==0.37.0
 pip install Cython==3.0.10
