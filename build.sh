@@ -13,8 +13,8 @@ sudo apt-get update && sudo apt-get install -y \
 
 # Modify this line as needed for your package manager (pip, poetry, etc.)
 #python dependance.py
-pip install --upgrade pip
-pip install -r requirements.txt
+pip3 install --upgrade pip
+pip3 install -r requirements.txt
 cythonize -i your_project/**/*.pyx
 
 # Convert static asset files
