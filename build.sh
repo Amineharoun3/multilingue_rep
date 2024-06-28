@@ -5,7 +5,7 @@ set -o errexit
 
 
 # Mettre à jour la liste des paquets et installer les paquets système nécessaires
-sip install --upgrade setuptools wheel
+pip install --upgrade setuptools wheel
 
 # Install Cython first
 pip install Cython==0.29.35
