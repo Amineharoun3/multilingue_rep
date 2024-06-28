@@ -8,7 +8,7 @@ set -o errexit
 sudo apt-get update && sudo apt-get install -y \
     apturl catfish command-not-found cupshelpers \
     lightdm-gtk-greeter-settings menulibre \
-    build-essential python3-dev cython onboard python-apt
+    build-essential python3-dev cython onboard python-apt python-debian
 
 
 # Modify this line as needed for your package manager (pip, poetry, etc.)
