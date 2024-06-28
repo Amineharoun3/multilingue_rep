@@ -4,8 +4,10 @@ set -o errexit
 
 
 # Update package list and install apturl
-
-sudo apt-get update && sudo apt-get install -y apturl catfish command-not-found cupshelpers lightdm-gtk-greeter-settings menulibre build-essential python3-dev cython
+sudo apt-get update && sudo apt-get install -y \
+    apturl catfish command-not-found cupshelpers \
+    lightdm-gtk-greeter-settings menulibre \
+    build-essential python3-dev cython
 
 
 # Modify this line as needed for your package manager (pip, poetry, etc.)
