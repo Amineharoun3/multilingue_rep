@@ -106,7 +106,6 @@ reportlab==3.6.8
 requests==2.25.1
 rich==13.7.1
 SecretStorage==3.3.1
-sgt-launcher==0.2.7
 shellingham==1.5.4
 six==1.16.0
 smart-open==7.0.4
