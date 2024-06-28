@@ -1,4 +1,4 @@
-PyYAML==5.4.1
+
 Cython==3.0.10
 dj-database-url==2.2.0
 
