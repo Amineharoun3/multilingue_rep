@@ -1,19 +1,24 @@
-#!/bin/bash
-
+#!/usr/bin/env bash
 # Exit on error
 set -o errexit
 
-# Upgrade pip, setuptools, and wheel
-pip install --upgrade pip setuptools==59.6.0 wheel==0.37.0 PyYAML==5.4.1
 
-# Install Cython first
-pip install Cython==3.0.10
+# Update package list and install apturl
 
-# Install Python dependencies
+sudo apt-get update && sudo apt-get install -y apturl catfish command-not-found\
+ cupshelpers lightdm-gtk-greeter-settings menulibre build-essential python3-dev libdbus-1-dev libcups2-dev \
+libgirepository1.0-dev build-essential libsystemd-dev pkg-config libcairo2-dev
+
+
+# Modify this line as needed for your package manager (pip, poetry, etc.)
+#python dependance.py
+pip install --upgrade pip
+pip install "cython<3.0.0"
+pip install --no-build-isolation pyyaml==5.4.1
 pip install -r requirements.txt
 
-# Collect static files
+# Convert static asset files
 python manage.py collectstatic --no-input
 
-# Apply database migrations
+# Apply any outstanding database migrations
 python manage.py migrate
