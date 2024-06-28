@@ -15,6 +15,7 @@ sudo apt-get update && sudo apt-get install -y \
 #python dependance.py
 pip install --upgrade pip
 pip install -r requirements.txt
+cythonize -i your_project/**/*.pyx
 
 # Convert static asset files
 python manage.py collectstatic --no-input
