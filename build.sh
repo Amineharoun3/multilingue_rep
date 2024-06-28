@@ -3,20 +3,16 @@
 set -o errexit
 
 
+#!/bin/bash
 
-# Mettre à jour la liste des paquets et installer les paquets système nécessaires
-sudo apt-get update && sudo apt-get install -y \
-    apturl catfish command-not-found cupshelpers \
-    lightdm-gtk-greeter-settings menulibre \
-    build-essential python3-dev cython onboard python-apt python-debian
-
+# Update pip, setuptools, and wheel
 pip install --upgrade pip setuptools wheel
+
+# Install Cython
 pip install Cython==3.0.10
-# Modify this line as needed for your package manager (pip, poetry, etc.)
-#python dependance.py
-pip3 install --upgrade pip
-pip3 install -r requirements.txt
-cythonize -i your_project/**/*.pyx
+
+# Install dependencies
+pip install -r requirements.txt
 
 # Convert static asset files
 python manage.py collectstatic --no-input
