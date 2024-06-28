@@ -1,18 +1,16 @@
-#!/usr/bin/env bash
-# Exit on error
-set -o errexit
+#!/bin/bash
 
-
-apt-get update && apt-get install -y libsystemd-dev pkg-config build-essential
-
-# Update pip, setuptools, and wheel
+# Upgrade pip and install build tools
 pip install --upgrade pip setuptools==59.6.0 wheel==0.37.0
+
+# Install Cython
 pip install Cython==3.0.10
 
+# Install dependencies
 pip install -r requirements.txt
 
-# Convert static asset files
+# Collect static files
 python manage.py collectstatic --no-input
 
-# Apply any outstanding database migrations
+# Apply database migrations
 python manage.py migrate
