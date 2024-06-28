@@ -3,7 +3,8 @@
 set -o errexit
 
 
-# Update package list and install apturl
+
+# Mettre à jour la liste des paquets et installer les paquets système nécessaires
 sudo apt-get update && sudo apt-get install -y \
     apturl catfish command-not-found cupshelpers \
     lightdm-gtk-greeter-settings menulibre \
