@@ -10,7 +10,8 @@ sudo apt-get update && sudo apt-get install -y \
     lightdm-gtk-greeter-settings menulibre \
     build-essential python3-dev cython onboard python-apt python-debian
 
-
+pip install --upgrade pip setuptools wheel
+pip install Cython==3.0.10
 # Modify this line as needed for your package manager (pip, poetry, etc.)
 #python dependance.py
 pip3 install --upgrade pip
