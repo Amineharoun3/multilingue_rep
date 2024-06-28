@@ -13,8 +13,20 @@ RUN apt-get update && apt-get install -y \
 # Copy the current directory contents into the container at /app
 COPY . /app
 
-# Run the build script
-RUN ./build.sh
+# Upgrade pip, setuptools, and wheel
+RUN pip install --upgrade pip setuptools==59.6.0 wheel==0.37.0
+
+# Install Cython first
+RUN pip install Cython==3.0.10
+
+# Install Python dependencies
+RUN pip install -r requirements.txt
+
+# Collect static files
+RUN python manage.py collectstatic --no-input
+
+# Apply database migrations
+RUN python manage.py migrate
 
 # Make port 8000 available to the world outside this container
 EXPOSE 8000
