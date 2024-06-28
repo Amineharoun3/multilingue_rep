@@ -1,5 +1,4 @@
 Cython==3.0.10
-PyYAML==5.4.1
 dj-database-url==2.2.0
 
 aiohttp==3.9.5
