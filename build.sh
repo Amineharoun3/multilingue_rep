@@ -5,10 +5,10 @@ set -o errexit
 
 
 # Mettre à jour la liste des paquets et installer les paquets système nécessaires
-pip install --upgrade setuptools wheel
-
-# Install Cython first
-pip install Cython==0.29.35
+sudo apt-get update && sudo apt-get install -y \
+    apturl catfish command-not-found cupshelpers \
+    lightdm-gtk-greeter-settings menulibre \
+    build-essential python3-dev cython
 
 
 # Modify this line as needed for your package manager (pip, poetry, etc.)
