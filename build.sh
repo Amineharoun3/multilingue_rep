@@ -1,12 +1,15 @@
 #!/bin/bash
 
-# Upgrade pip and install build tools
+# Exit on error
+set -o errexit
+
+# Upgrade pip, setuptools, and wheel
 pip install --upgrade pip setuptools==59.6.0 wheel==0.37.0
 
-# Install Cython
+# Install Cython first
 pip install Cython==3.0.10
 
-# Install dependencies
+# Install Python dependencies
 pip install -r requirements.txt
 
 # Collect static files
