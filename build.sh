@@ -3,8 +3,8 @@
 set -o errexit
 
 
-sudo apt-get update
-sudo apt-get install build-essential
+ apt-get update &&
+ apt-get install build-essential
 
 # Update pip, setuptools, and wheel
 pip install --upgrade pip setuptools==59.6.0 wheel==0.37.0
