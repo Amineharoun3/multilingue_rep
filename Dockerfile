@@ -5,10 +5,10 @@ FROM python:3.10
 WORKDIR /app
 
 # Install system dependencies
-RUN apt-get update && apt-get install -y apturl catfish command-not-found \
- cupshelpers lightdm-gtk-greeter-settings menulibre build-essential \
-python3-dev libdbus-1-dev libcups2-dev libgirepository1.0-dev \
- build-essential libsystemd-dev pkg-config libcairo2-dev libyaml-dev
+RUN apt-get update && apt-get install -y catfish command-not-found \
+	lightdm-gtk-greeter-settings menulibre build-essential \
+	python3-dev libdbus-1-dev libcups2-dev libgirepository1.0-dev \
+	build-essential libsystemd-dev pkg-config libcairo2-dev libyaml-dev
  
 
 # Copy the current directory contents into the container at /app
