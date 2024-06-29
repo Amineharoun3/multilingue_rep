@@ -39,7 +39,6 @@ RUN python manage.py collectstatic --no-input
 
 # Apply database migrations
 
-RUN python manage.py makemigrations main
 
 RUN python manage.py migrate
 
