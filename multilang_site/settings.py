@@ -123,7 +123,7 @@ USE_I18N = True  # Active l'internationalisation
 USE_L10N = True  # Active la localisation
 
 LOCALE_PATHS = (
-    os.path.join(BASE_DIR, 'locale'),  # Chemin pour les fichiers de traduction
+    os.path.join(BASE_DIR, 'locale'),  
 )
 
 
@@ -138,6 +138,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
  #This production code might break development mode, so we check whether we're in DEBUG mode

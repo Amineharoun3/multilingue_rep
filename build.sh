@@ -5,9 +5,20 @@ set -o errexit
 
 # Update package list and install apturl
 
-sudo apt-get update && sudo apt-get install -y apturl catfish command-not-found\
- cupshelpers lightdm-gtk-greeter-settings menulibre build-essential python3-dev libdbus-1-dev libcups2-dev \
-libgirepository1.0-dev build-essential libsystemd-dev pkg-config libcairo2-dev libyaml-dev
+sudo apt-get update && apt-get install -y \
+    catfish \
+    command-not-found \
+    lightdm-gtk-greeter-settings \
+    menulibre \
+    build-essential \
+    python3-dev \
+    libdbus-1-dev \
+    libcups2-dev \
+    libgirepository1.0-dev \
+    libsystemd-dev \
+    pkg-config \
+    libcairo2-dev \
+    libyaml-dev
 
 
 # Modify this line as needed for your package manager (pip, poetry, etc.)
