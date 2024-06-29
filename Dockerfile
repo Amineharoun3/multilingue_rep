@@ -8,7 +8,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y apturl catfish command-not-found \
  cupshelpers lightdm-gtk-greeter-settings menulibre build-essential \
 python3-dev libdbus-1-dev libcups2-dev libgirepository1.0-dev \
- build-essential libsystemd-dev pkg-config libcairo2-dev libyaml-dev\
+ build-essential libsystemd-dev pkg-config libcairo2-dev libyaml-dev
  
 
 # Copy the current directory contents into the container at /app
