@@ -22,7 +22,7 @@ from chatbot.views import chatbot
 
 urlpatterns = [
  path('admin/', admin.site.urls),
-    path('article/', views.article_list, name='article_list'),  # Ajout du slash
+    path('', views.article_list, name='article_list'),  # Ajout du slash
     path('main/home/', views.home, name='home'),  # Ajout du slash
     path('i18n/', include('django.conf.urls.i18n')),
     path('chat/', chatbot, name='chatbot'),  # Correction ici, ajout du slash et nom
