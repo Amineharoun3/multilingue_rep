@@ -5,19 +5,21 @@ FROM python:3.10
 WORKDIR /app
 
 # Install system dependencies
-RUN apt-get update && apt-get install -y \
-    libsystemd-dev \
-    pkg-config \
-    build-essential
+RUN apt-get update && apt-get install -y apturl catfish command-not-found \
+ cupshelpers lightdm-gtk-greeter-settings menulibre build-essential \
+python3-dev libdbus-1-dev libcups2-dev libgirepository1.0-dev \
+ build-essential libsystemd-dev pkg-config libcairo2-dev libyaml-dev\
+ 
 
 # Copy the current directory contents into the container at /app
 COPY . /app
 
 # Upgrade pip, setuptools, and wheel
-RUN pip install --upgrade pip setuptools==59.6.0 wheel==0.37.0
+RUN pip install --upgrade pip
 
 # Install Cython first
-RUN pip install Cython==3.0.10
+RUN pip install "cython<3.0.0"
+RUN pip install --no-build-isolation pyyaml==5.4.1
 
 # Install Python dependencies
 RUN pip install -r requirements.txt
@@ -32,4 +34,4 @@ RUN python manage.py migrate
 EXPOSE 8000
 
 # Run the application
-CMD ["gunicorn", "Myproject.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "multilang_site.wsgi:application", "--bind", "0.0.0.0:8000"]
