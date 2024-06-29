@@ -38,6 +38,9 @@ RUN pip install -r requirements.txt
 RUN python manage.py collectstatic --no-input
 
 # Apply database migrations
+
+RUN python manage.py makemigrations main
+
 RUN python manage.py migrate
 
 # Make port 8000 available to the world outside this container
