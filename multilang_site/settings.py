@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'multilang_site.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config('postgresql://sqlite:SHJnx93KQzRGhlQjG1PgGoUAoiln1YOt@dpg-cpufjbmehbks73eg87n0-a/sqlite_d4bp')}
+    'default': dj_database_url.config('DATABASE_URL')}
 
 
 # Password validation
