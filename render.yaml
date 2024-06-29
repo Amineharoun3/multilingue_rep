@@ -1,7 +1,7 @@
 databases:
   - name: mysitedb
     plan: free
-    databaseName: sqlite
+    databaseName: sqlite_d4bp
     user: sqlite
 
 services:
